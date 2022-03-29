@@ -14,17 +14,17 @@ export const ContactForm = ({
       <form onSubmit={handleSubmit}>
         <label>
           Name
-          <input type='text' />
+          <input value={name} onChange={({target}) => {setName(target.value)}} type='text' />
         </label>
         <label>
           Phone
-          <input type='text' />
+          <input value={phone} onChange={({target}) => {setPhone(target.value)}} type='tel' pattern='[1-9][0-9]{2}[1-9][0-9]{2}[0-9]{4}' placeholder='123-456-8910'/>
         </label>
         <label>
           Email
-          <input type='text' />
+          <input value={email} onChange={({target}) => {setEmail(target.value)}} type='text'  />
         </label>
-        <input type='submit' value='Submit/>
+        <input type='submit' value='Submit'/>
       </form>
     </>
     // ContactForm

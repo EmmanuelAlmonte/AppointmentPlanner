@@ -22,8 +22,8 @@ function App () {
   */
 
   // Might need to adjust in order to get form data
-  const addContact = ({ target }) => {
-    const contactInfo = target.value
+  const addContact = (name, phone, email) => {
+    const contactInfo = { name: name, phone: phone, email: email }
     setContacts(prev => {
       return [...prev, contactInfo]
     })

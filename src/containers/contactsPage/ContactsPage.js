@@ -13,13 +13,16 @@ export const ContactsPage = ({ contacts, addContacts }) => {
   const [prevName, setPrevName] = useState(false)
 
   const handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault() 
+    console.log("I submitted")
     /*
     Add contact info and clear data
     if the contact name is not a duplicate
     */
-    if (!prevName.includes(name)) {
+    for(const x of contacts){
+    if (x.name === name) {
       addContacts(name, phone, email)
+    }
     }
     setName('')
     setPhone('')
