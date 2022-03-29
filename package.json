@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "test-one",
-=======
   "name": "appointment-planner",
->>>>>>> e43cde1cca6b012e42144e778de1004249bc0bbf
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,10 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-<<<<<<< HEAD
     "react-router-dom": "^5.3.0",
-=======
->>>>>>> e43cde1cca6b012e42144e778de1004249bc0bbf
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
   },

@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { ContactForm } from '../../components/contactForm/ContactForm'
-import { TileList } from '../../components/tileList/TileList'
+import React, { useState, useEffect } from 'react'
 
 export const ContactsPage = ({ contacts, addContacts }) => {
   /*
@@ -13,16 +11,16 @@ export const ContactsPage = ({ contacts, addContacts }) => {
   const [prevName, setPrevName] = useState(false)
 
   const handleSubmit = e => {
-    e.preventDefault() 
-    console.log("I submitted")
+    e.preventDefault()
+    console.log('I submitted')
     /*
     Add contact info and clear data
     if the contact name is not a duplicate
     */
-    for(const x of contacts){
-    if (x.name === name) {
-      addContacts(name, phone, email)
-    }
+    for (const x of contacts) {
+      if (x.name === name) {
+        addContacts(name, phone, email)
+      }
     }
     setName('')
     setPhone('')
@@ -34,30 +32,22 @@ export const ContactsPage = ({ contacts, addContacts }) => {
   contacts array variable in props
   */
   useEffect(() => {
-    if (!contacts.includes(name)) {
+    if(!contacts.includes(name)) {
       setPrevName(false)
     }
     setPrevName(true)
   }, [name])
 
+  useEffect(() => {}, [name])
+
   return (
     <div>
       <section>
         <h2>Add Contact</h2>
-        <ContactForm
-          handleSubmit={handleSubmit}
-          setName={setName}
-          name={name}
-          setPhone={setPhone}
-          phone={phone}
-          setEmail={setEmail}
-          email={email}
-        />
       </section>
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList contacts={contacts} />
       </section>
     </div>
   )
